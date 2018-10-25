@@ -1,3 +1,4 @@
+
 ## **I. Définition des termes**
 
 * Kernel
@@ -101,3 +102,37 @@ Compatibilité
 *Corbeille secondaire
 
 *** le plus important**
+
+
+------------------
+## Structure d'un système d'exploitation :
+Un OS permet de :
+- Charger les programmes les uns après les autres 
+- Emule une VM (couche abstraction logicielle pour simplifier aux programmeurs)
+- Gestion des ressources (Tampons...)
+
+**Système multi-tâches :** Exécuter plusieurs programmes simultanément :
+- Processus : Instance de programme entrain de s'exécuter (task sous Linux)
+- Temps partagé : Quand un seul processeur, pour plusieurs exécutions, un programme va se faire exécuter dans un autre programme.
+- Abstraction du déroulement :Chaque processus à un processeur virtuel, ils s'exécutent en parallèle.
+- Variables d'environnement : 
+	- Deux processus peuvent utiliser le même code
+	- Quand deux processus s’exécutent, un peut être mis en attente/pause. Il est nécessaire de retrouver son état antérieur avec ces variables
+- Espace mémoire processus : Chaque processus à son propre espace mémoire "Espace adressage processus"
+-  Incidence sur le traitement des durées : Parfois minuteurs pour assurer transition entre processus
+
+**Système multi-utilisateurs :** Capable d'exécuter de façon concurrente (se disputer l'accès à des ressources) et indépendante (réaliser son travail sans se préoccuper des autres) des applis à plusieurs users.
+- Mise en place : Laps de temps à chaque user
+- Mécanismes associés : 
+	- Authentification (Identité)
+	- Protection : Programmes qui pourraient bloquer / espionner activités ou processus autres users
+	- Comptabilité : Limiter le volume des ressources alloués à chaque user
+- Utilisateurs : Espace privé, quota espace disque, visibilité... User = UID (User Identifier)
+- Groupe Utilisateurs : GID (Group Identifier)
+- Super Utilisateur : Superviseur / Admin : root (accéder à tous les fichiers du système) mais pas du noyau.
+
+
+## Structure externe d'un système d'exploitation :
+
+- Noyau et utilitaires :
+	- 
